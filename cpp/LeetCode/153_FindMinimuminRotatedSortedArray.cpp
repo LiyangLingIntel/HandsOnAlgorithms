@@ -20,7 +20,7 @@ using namespace std;
 
 class Solution {
 public:
-    // 思想还是二分查找, 通过二分去找到断层点, 达到O(logn)的效率
+    // 思想还是二分查找, 通过二分去找到断层点, 达到O(logn)的复杂度
     int findMin(vector<int>& nums) {
         
         int N = nums.size();
