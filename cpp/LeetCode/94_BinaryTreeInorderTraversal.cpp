@@ -30,7 +30,7 @@ right(right) {}
 };
 
 // Solution: recursive
-class Solutio1 {
+class Solution {
 public:
   void inorderTraversal(TreeNode *node, vector<int> &output) {
     if (node == nullptr)
