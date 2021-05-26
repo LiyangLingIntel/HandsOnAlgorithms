@@ -7,27 +7,27 @@
 #include "00_commonHeader.hpp"
 
 class Solution {
-public:
+  public:
     int getFirstK(vector<int> data, int k, int n) {
         int start = 0;
-        int end = n-1;
+        int end = n - 1;
         int mid = (start + end) / 2;
-        
+
         while (end >= start) {
             if (data[mid] < k)
                 start = mid + 1;
             else
-                end = mid -1;
+                end = mid - 1;
             mid = (start + end) / 2;
         }
         return start;
     }
-    
+
     int getLastK(vector<int> data, int k, int n) {
         int start = 0;
-        int end = n-1;
+        int end = n - 1;
         int mid = (start + end) / 2;
-        
+
         while (end >= start) {
             if (data[mid] > k)
                 end = mid - 1;
@@ -37,8 +37,8 @@ public:
         }
         return end;
     }
-    
-    int GetNumberOfK(vector<int> data ,int k) {
+
+    int GetNumberOfK(vector<int> data, int k) {
         int N = data.size();
         int number = 0;
 

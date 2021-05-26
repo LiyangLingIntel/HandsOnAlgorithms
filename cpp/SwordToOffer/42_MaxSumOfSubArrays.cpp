@@ -5,19 +5,18 @@
 // 例如:{6,-3,-2,7,-15,1,2,2},连续子向量的最大和为8(从第0个开始,到第3个为止)。
 // 给一个数组，返回它的最大连续子序列的和，你会不会被他忽悠住？(子向量的长度至少是1)
 
-
 #include "00_commonHeader.hpp"
 
 // 核心还是要理解最大子序列求和的过程, 利用动归的思想一路捋过来
 class Solution {
-public:
+  public:
     int FindGreatestSumOfSubArray(vector<int> array) {
-        if(array.empty())
+        if (array.empty())
             return 0;
-        
+
         int max_sum = array[0], curr_sum = array[0];
-        for(int i=1; i<array.size(); i++){
-            curr_sum = curr_sum > 0 ? curr_sum+array[i] : array[i];
+        for (int i = 1; i < array.size(); i++) {
+            curr_sum = curr_sum > 0 ? curr_sum + array[i] : array[i];
             max_sum = curr_sum > max_sum ? curr_sum : max_sum;
         }
         return max_sum;

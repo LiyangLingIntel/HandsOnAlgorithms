@@ -3,39 +3,36 @@
 #include "00_commonHeader.hpp"
 
 struct TreeNode {
-	int val;
-	struct TreeNode *left;
-	struct TreeNode *right;
-	TreeNode(int x) :
-			val(x), left(NULL), right(NULL) {
-	}
+    int val;
+    struct TreeNode *left;
+    struct TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
 class Solution {
-public:
-    void ReconnectTree(TreeNode* node, TreeNode** lastNode) {
+  public:
+    void ReconnectTree(TreeNode *node, TreeNode **lastNode) {
         if (node == nullptr)
             return;
-        
-        TreeNode* currNode = node;
-        if(currNode->left != nullptr) 
+
+        TreeNode *currNode = node;
+        if (currNode->left != nullptr)
             ReconnectTree(currNode->left, lastNode);
-        
+
         currNode->left = *lastNode;
-        if(*lastNode != nullptr)
+        if (*lastNode != nullptr)
             (*lastNode)->right = currNode;
-        
+
         *lastNode = currNode;
-        if(currNode->right != nullptr)
+        if (currNode->right != nullptr)
             ReconnectTree(currNode->right, lastNode);
     }
-    TreeNode* Convert(TreeNode* pRootOfTree)
-    {
-        TreeNode* lastNode = nullptr;
+    TreeNode *Convert(TreeNode *pRootOfTree) {
+        TreeNode *lastNode = nullptr;
         ReconnectTree(pRootOfTree, &lastNode);
-        
-        TreeNode* headNode = lastNode;
-        while(headNode != nullptr && headNode->left != nullptr)
+
+        TreeNode *headNode = lastNode;
+        while (headNode != nullptr && headNode->left != nullptr)
             headNode = headNode->left;
         return headNode;
     }

@@ -4,26 +4,26 @@
 #include "00_commonHeader.hpp"
 
 class Solution {
-public:
-  string reverseWords(string s) {
-    stack<char> word;
-    string res = "";
-    for (int i = s.size() - 1; i >= 0; --i) {
-      if (s[i] != ' ') {
-        word.push(s[i]);
-      }
-      if (s[i] == ' ' || i == 0) {
-        bool flag = false;
-        while (word.empty() == false) {
-          res.push_back(word.top());
-          word.pop();
-          flag = true;
+  public:
+    string reverseWords(string s) {
+        stack<char> word;
+        string res = "";
+        for (int i = s.size() - 1; i >= 0; --i) {
+            if (s[i] != ' ') {
+                word.push(s[i]);
+            }
+            if (s[i] == ' ' || i == 0) {
+                bool flag = false;
+                while (word.empty() == false) {
+                    res.push_back(word.top());
+                    word.pop();
+                    flag = true;
+                }
+                if (flag) {
+                    res += " ";
+                }
+            }
         }
-        if (flag) {
-          res += " ";
-        }
-      }
+        return res.substr(0, res.size() - 1);
     }
-    return res.substr(0, res.size() - 1);
-  }
-}
+};

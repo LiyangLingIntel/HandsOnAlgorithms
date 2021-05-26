@@ -5,17 +5,17 @@
 
 // 思路就是通过重新定义排序比较的规则来对数组重新排序, 然后按序拼接字符串.
 class Solution {
-public:
-  string PrintMinNumber(vector<int> numbers) {
-    string res = "";
-    if (numbers.empty())
-      return res;
-    sort(numbers.begin(), numbers.end(), [](int x, int y) {
-      return to_string(x) + to_string(y) < to_string(y) + to_string(x);
-    });
-    for (auto i : numbers) {
-      res += to_string(i);
+  public:
+    string PrintMinNumber(vector<int> numbers) {
+        string res = "";
+        if (numbers.empty())
+            return res;
+        sort(numbers.begin(), numbers.end(), [](int x, int y) {
+            return to_string(x) + to_string(y) < to_string(y) + to_string(x);
+        });
+        for (auto i : numbers) {
+            res += to_string(i);
+        }
+        return res;
     }
-    return res;
-  }
 };

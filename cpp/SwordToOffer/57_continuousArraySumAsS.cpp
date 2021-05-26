@@ -9,24 +9,24 @@
 // 如果当前sum大于目标, 就增加 small;
 // 反之则增大 big.
 class Solution {
-public:
+  public:
     vector<int> initRangedVector(int start, int end) {
         vector<int> res;
-        for (int i=start; i<=end; i++)
+        for (int i = start; i <= end; i++)
             res.push_back(i);
         return res;
     }
-    
-    vector<vector<int> > FindContinuousSequence(int sum) {
-        vector<vector<int> > res;
+
+    vector<vector<int>> FindContinuousSequence(int sum) {
+        vector<vector<int>> res;
         if (sum < 3)
             res;
-        
+
         int small = 1;
         int big = 2;
-        int bound = (1+sum) / 2;
+        int bound = (1 + sum) / 2;
         int currSum = small + big;
-        
+
         while (small < bound) {
             if (currSum == sum) {
                 vector<int> stageRes = initRangedVector(small, big);

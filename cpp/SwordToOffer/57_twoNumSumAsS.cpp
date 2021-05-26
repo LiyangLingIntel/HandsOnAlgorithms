@@ -6,22 +6,21 @@
 
 // 思路: 双指针前后遍历
 class Solution {
-public:
-    vector<int> FindNumbersWithSum(vector<int> array,int sum) {
+  public:
+    vector<int> FindNumbersWithSum(vector<int> array, int sum) {
         int N = array.size();
         vector<int> res;
         if (N < 2)
             return res;
         int pb = 0;
-        int pe = N-1;
-        while(pb < pe) {
+        int pe = N - 1;
+        while (pb < pe) {
             int tmpSum = array[pb] + array[pe];
             if (tmpSum == sum) {
                 res.push_back(array[pb]);
                 res.push_back(array[pe]);
                 break;
-            }
-            else if(tmpSum > sum)
+            } else if (tmpSum > sum)
                 pe--;
             else
                 pb++;

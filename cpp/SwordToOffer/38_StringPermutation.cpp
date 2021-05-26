@@ -6,22 +6,22 @@
 #include "00_commonHeader.hpp"
 
 class Solution {
-public:
+  public:
     vector<string> Permutation(string str) {
         vector<string> res;
         Permutation(res, str, 0);
         sort(res.begin(), res.end());
         return res;
     }
-    
+
     void Permutation(vector<string> &res, string str, int begin) {
-        if(begin==str.size()-1)
+        if (begin == str.size() - 1)
             res.push_back(str);
-        for(int i=begin; i<str.size(); i++) {
-            if(i!=begin && str[i]==str[begin]) //有重复字符时，跳过
+        for (int i = begin; i < str.size(); i++) {
+            if (i != begin && str[i] == str[begin]) //有重复字符时，跳过
                 continue;
             swap(str[i], str[begin]);
-            Permutation(res, str, begin+1);
+            Permutation(res, str, begin + 1);
             swap(str[i], str[begin]);
         }
     }
