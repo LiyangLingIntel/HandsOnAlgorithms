@@ -7,10 +7,7 @@
  {2,3,4,[2,6,2],5,1}， {2,3,4,2,[6,2,5],1}， {2,3,4,2,6,[2,5,1]}。
 */
 
-#include<iostream>
-#include<vector>
-#include<list>
-using namespace std;
+#include "00_commonHeader.hpp"
 
 class Solution {
 public:

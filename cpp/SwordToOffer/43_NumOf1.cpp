@@ -2,9 +2,7 @@
 // 但是对于后面问题他就没辙了。ACMer希望你们帮帮他,并把问题更加普遍化,可以很快的求出任意非负整数区间中1出现的次数（从1 到 n 中1出现的次数）。
 
 
-#include<iostream>
-#include<vector>
-using namespace std;
+#include "00_commonHeader.hpp"
 
 /*
 主要思路：设定整数点（如1、10、100等等）作为位置点i（对应n的各位、十位、百位等等），分别对每个数位上有多少包含1的点进行分析

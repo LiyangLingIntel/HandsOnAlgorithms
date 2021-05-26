@@ -3,9 +3,7 @@
 // 没多久,他就得到另一组连续正数和为100的序列:18,19,20,21,22。
 // 现在把问题交给你,你能不能也很快的找出所有和为S的连续正数序列? Good Luck!
 
-#include<iostream>
-#include<vector>
-using namespace std;
+#include "00_commonHeader.hpp"
 
 // 思路还是双指针, 前后两指针分别递增, 确定window size.
 // 如果当前sum大于目标, 就增加 small;

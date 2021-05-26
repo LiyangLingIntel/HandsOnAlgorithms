@@ -3,10 +3,7 @@
 // 输入描述:
 // 输入一个字符串,长度不超过9(可能有字符重复),字符只包括大小写字母。
 
-#include<iostream>
-#include<vector>
-using namespace std;
-
+#include "00_commonHeader.hpp"
 
 class Solution {
 public:

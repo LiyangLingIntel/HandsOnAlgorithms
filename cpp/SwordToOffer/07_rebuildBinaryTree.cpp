@@ -21,9 +21,7 @@
 // 0 <= 节点个数 <= 5000
 
 
-#include <vector>
-
-using namespace std;
+#include "00_commonHeader.hpp"
 
 // Definition for a binary tree node.
 struct TreeNode {

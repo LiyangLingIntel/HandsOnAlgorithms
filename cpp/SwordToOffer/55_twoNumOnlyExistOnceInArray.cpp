@@ -1,10 +1,7 @@
 // 一个整型数组里除了两个数字之外，其他的数字都出现了两次。
 // 请写程序找出这两个只出现一次的数字。
 
-#include<iostream>
-#include<vector>
-#include<list>
-using namespace std;
+#include "00_commonHeader.hpp"
 
 // 要求时间复杂度为 O(n)， 空间复杂度为 O(1)
 

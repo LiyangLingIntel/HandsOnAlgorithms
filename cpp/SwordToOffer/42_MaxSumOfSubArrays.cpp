@@ -6,9 +6,7 @@
 // 给一个数组，返回它的最大连续子序列的和，你会不会被他忽悠住？(子向量的长度至少是1)
 
 
-#include<iostream>
-#include<vector>
-using namespace std;
+#include "00_commonHeader.hpp"
 
 // 核心还是要理解最大子序列求和的过程, 利用动归的思想一路捋过来
 class Solution {

@@ -22,9 +22,7 @@
 // 所有节点的值都是唯一的。
 // p、q 为不同节点且均存在于给定的二叉搜索树中。
 
-#include <iostream>
-#include <vector>
-using namespace std;
+#include "00_commonHeader.hpp"
 
 // Definition for a binary tree node.
 struct TreeNode {

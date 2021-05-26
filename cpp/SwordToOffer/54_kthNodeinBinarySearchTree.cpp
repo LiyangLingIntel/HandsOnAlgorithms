@@ -3,10 +3,7 @@
 例如， （5，3，7，2，4，6，8）    中，按结点数值大小顺序第三小结点的值为4。
 */
 
-#include<iostream>
-#include<vector>
-#include<list>
-using namespace std;
+#include "00_commonHeader.hpp"
 
 struct TreeNode {
     int val;
