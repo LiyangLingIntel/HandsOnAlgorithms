@@ -8,21 +8,21 @@
 
 class Solution {
   public:
-    int eraseOverlapIntervals(vector<vector<int>> &intervals) {
-        if (intervals.empty()) {
+    int findMinArrowShots(vector<vector<int>> &points) {
+        if (points.empty()) {
             return 0;
         }
-        sort(intervals.begin(), intervals.end(),
-             [](vector<int> lhs, vector<int> rhs) { return lhs[1] < rhs[1]; });
-        int rm_count = 0;
-        auto pre_end = intervals[0][1];
-        for (int i = 1; i < intervals.size(); i++) {
-            if (intervals[i][0] < pre_end) {
-                ++rm_count;
-            } else {
-                pre_end = intervals[i][1];
+        sort(points.begin(), points.end(),
+             [](vector<int> a, vector<int> b) { return a[1] < b[1]; });
+        int arrows = 1;
+        int prev_end = points[0][1];
+        for (int i = 1; i < points.size(); i++) {
+            if (prev_end >= points[i][0]) {
+                continue;
             }
+            prev_end = points[i][1];
+            arrows++;
         }
-        return rm_count;
+        return arrows;
     }
 };
