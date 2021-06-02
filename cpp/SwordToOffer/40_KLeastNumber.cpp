@@ -5,14 +5,14 @@
 #include <multiset>
 
 class Solution {
-public:
+  public:
     vector<int> GetLeastNumbers_Solution(vector<int> input, int k) {
 
         // // Solution 1: O(nlogn)
         // vector<int> res;
         // if(input.empty()||k>input.size())
         //     return res;
-        
+
         // sort(input.begin(), input.end());
         // for(int i=0; i<k; i++){
         //     res.push_back(input[i]);
@@ -20,16 +20,17 @@ public:
         // return res;
 
         vector<int> res;
-        if(input.empty() || k < 1 || input.size() < k)
+        if (input.empty() || k < 1 || input.size() < k)
             return res;
-        
-        multiset<int, greater<int> > least_nums;
-        for(vector<int>::iterator iter = input.begin(); iter<input.end(); iter++){
-            if(least_nums.size() < k)
+
+        multiset<int, greater<int>> least_nums;
+        for (vector<int>::iterator iter = input.begin(); iter < input.end();
+             iter++) {
+            if (least_nums.size() < k)
                 least_nums.insert(*iter);
             else {
                 int max_num = *least_nums.begin();
-                if(*iter < max_num){
+                if (*iter < max_num) {
                     least_nums.erase(least_nums.begin());
                     least_nums.insert(*iter);
                 }
