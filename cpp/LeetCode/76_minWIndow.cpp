@@ -6,6 +6,7 @@
 #include "00_commonHeader.hpp"
 
 class Solution {
+  public:
     string minWindow(string S, string T) {
         vector<int> chars(128, 0);
         vector<bool> flag(128, false);
