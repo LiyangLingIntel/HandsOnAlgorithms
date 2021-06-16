@@ -7,3 +7,17 @@
 // 是排在队列前面的人）。
 
 #include "00_commonHeader.hpp"
+
+class Solution {
+  public:
+    vector<vector<int>> reconstructQueue(vector<vector<int>> &people) {
+        sort(people.begin(), people.end(), [](vector<int> a, vector<int> b) {
+            return a[0] > b[0] || (a[0] == b[0] && a[1] < b[1]);
+        });
+        vector<vector<int>> que;
+        for (auto &p : people) {
+            que.insert(que.begin() + p[1], p);
+        }
+        return que;
+    }
+};

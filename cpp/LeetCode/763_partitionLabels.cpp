@@ -6,7 +6,7 @@
 class Solution {
   public:
     vector<int> partitionLabels(string s) {
-        vector<int> lastPos(s.size(), 0);
+        vector<int> lastPos(26, 0);
         for (int i = 0; i < s.size(); i++) {
             lastPos[s[i] - 'a'] = i;
         }
