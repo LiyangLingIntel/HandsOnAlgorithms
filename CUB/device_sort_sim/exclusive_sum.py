@@ -6,3 +6,11 @@
 # 2. parallel impl for validating understanding
 
 import numpy as np
+
+
+class ExclusiveSumSequential:
+    def __init__(self):
+        pass
+
+    def prefix_sum(histogram):
+        
