@@ -9,8 +9,17 @@ import numpy as np
 
 
 class ExclusiveSumSequential:
-    def __init__(self):
-        pass
+    def __init__(self, histogram):
+        self.passes = histogram.passes
+        self.radix_bits = histogram.radix_bits
+        self.radix_status = histogram.radix_status
 
-    def prefix_sum(histogram):
-        
+    # exclusive prefix sum
+    def __call__(bins):
+        dtype = bins.dtype
+        res_sum = np.zeros([self.passes, self.radix_status], dtype)
+        for p in range(self.passes):
+            for r in range(1, self.radix_status):
+                res_sum[p][r] = res_sum[p][r-1] + bins[p][r-1]
+
+        return res_sum

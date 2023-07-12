@@ -17,3 +17,14 @@ class RadixUtil:
 
     def twiddle_out(self, key):
         pass
+
+
+class RadixPolicy:
+    RADIX_BITS = 8
+    RADIX_STATUS = 1 << RADIX_BITS
+    HistogramPolicy = {}
+    ExculisveSumPolicy = {}
+
+    class OnesweepPolicy:
+        ITEMS_PER_THREAD = 2
+        BLOCK_THREADS = 2
