@@ -12,13 +12,13 @@
  */
 class Solution {
 public:
-    bool isValidBST(TreeNode* root) {
+    bool isValidBST(TreeNode *root) {
         long prev = LONG_MIN;
         auto isValid = traverseNode(root, prev);
         return isValid;
     }
-    
-    bool traverseNode(TreeNode* node, long& prev) {
+
+    bool traverseNode(TreeNode *node, long &prev) {
         if (node == nullptr) return true;
         if (!traverseNode(node->left, prev)) {
             return false;

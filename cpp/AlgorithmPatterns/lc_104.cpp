@@ -12,16 +12,16 @@
  */
 class Solution {
 public:
-    int maxDepth(TreeNode* root) {
+    int maxDepth(TreeNode *root) {
         return traverseNodes(root, 0);
     }
 
-    int traverseNodes(TreeNode* node, int depth) {
+    int traverseNodes(TreeNode *node, int depth) {
         if (node == nullptr) {
             return depth;
         }
-        auto depth_left = traverseNodes(node->left, depth+1);
-        auto depth_right = traverseNodes(node->right, depth+1);
+        auto depth_left = traverseNodes(node->left, depth + 1);
+        auto depth_right = traverseNodes(node->right, depth + 1);
         depth = depth_left > depth_right ? depth_left : detph_right;
         return depth;
     }
